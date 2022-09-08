@@ -13,7 +13,7 @@
      <meta name="description" content="Фестиваль крафтовых напитков">
 </head>
 <body>
-    <div class="main-section">
+    <div class="base-section">
         <div class="main-section__nav-conteiner">
                <header class="main-section__header">
                     <a href="{% url 'home' %}"><img src="{% static 'main/img/pngwing 1.png' %}" alt=""></a>
@@ -21,7 +21,7 @@
                <!-- Навигационное меню -->
                <nav class="main-section__nav nav-menu">
                     <ul class="nav-menu__list">
-                         <li class="nav-menu__list-item"><a href="{% url 'home' %}">Главная</a></li>
+                         <li class="nav-menu__list-item"><a href="{% url 'home'%}#second-section">Номинации</a></li>
                          <li class="nav-menu__list-item"><a href="https://t.me/IgorSuchilin">Подать заявку</a></li>
                     </ul>
                </nav>
@@ -29,19 +29,23 @@
           </div>
 
     <main>
-         <div id="second-section" class="second-section__text">
-               <a href="#"><h2> НОМИНАЦИЯ {{ cat|upper }} ГОДА:</h2></a>
+         <div class="base-section__text">
+               <a href="#"><h2> НОМИНАЦИЯ <br>{{ cat|upper }} ГОДА:</h2></a>
          </div>
         <div class="category-section">
-            {% for p in post %}
-                 <div class='category-box'>
-                    <div style="background: url(../../static/main/img/drinks{{p.image.url}}) center/cover" class="category-section__cards" ></div>
-                    <div class='category-box__text'>
-                        <h1 style="font-size:40px">{{p.title}}:</h1><br>
-                        <p style="font-family: Georgia, serif;">{{ p.description }}</p>
+            {% if post %}
+                {% for p in post %}
+                    <div class='category-box'>
+                        <div style="background: url(../../static/main/img/drinks{{p.image.url}}) center/cover" class="category-section__cards" ></div>
+                        <div class='category-box__text'>
+                            <h1 style="font-size:40px">{{p.title}}:</h1><br>
+                            <p style="font-family: Georgia, serif;">{{ p.description }}</p>
+                        </div>
                     </div>
-                </div>
-            {% endfor %}
+                {% endfor %}
+                {% else %}
+                <h1 style="font-size:40px; margin: 1em auto 2em;">Все выпили, но еще сделаем!</h1>
+            {% endif %}
         </div>
     </main>
 

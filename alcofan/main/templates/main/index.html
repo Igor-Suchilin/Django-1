@@ -13,39 +13,42 @@
      <meta name="description" content="Фестиваль крафтовых напитков">
 </head>
 <body>
-     <!-- Первая секция -->
-     <div class="main-section">
-          <div class="main-section__nav-conteiner">
+     <div class="main-section__nav-conteiner">
                <header class="main-section__header">
-                    <a href="{% url 'base' %}"><img src="{% static 'main/img/pngwing 1.png' %}" alt=""></a>
+                    <a href="{% url 'home' %}"><img src="{% static 'main/img/pngwing 1.png' %}" alt=""></a>
                </header>
                <!-- Навигационное меню -->
                <nav class="main-section__nav nav-menu">
                     <ul class="nav-menu__list">
+                         <li class="nav-menu__list-item"><a href="{% url 'home' %}">Главная</a></li>
                          <li class="nav-menu__list-item"><a href="#third-section">О мероприятии</a></li>
                          <li class="nav-menu__list-item"><a href="#second-section">Номинации</a></li>
                          <li class="nav-menu__list-item"><a href="#contacts">Контакты</a></li>
+                         <li class="nav-menu__list-item"><a href="https://t.me/IgorSuchilin">Подать заявку</a></li>
                     </ul>
                </nav>
-          </div>
+     </div>
+     <!-- Первая секция -->
+     <div class="main-section">
+          <br>
+          <h1>ЗАКРЫТЫЙ ФЕСТИВАЛЬ КРАФТОВЫХ НАПИТКОВ САНКТ-ПЕТЕРБУРГА</h1>
+          <h2>24 сентября 2022 г.</h2>
           <div class="main-section__text">
                <h2>ДО ГЛАВНОГО СОБЫТИЯ ГОДА <br> {{ days_left|upper }} <br> {{ now }} {{ day|upper }}</h2>
-          </div>     
-          <div class="main-section__text-1">
-               <h1>ЗАКРЫТЫЙ ФЕСТИВАЛЬ КРАФТОВЫХ НАПИТКОВ<br> САНКТ-ПЕТЕРБУРГА</h1> 
-          </div>     
+          </div>
      </div>
-       <!-- Третья секция -->
-     <div id="third-section" class="second-section__text">
-               <h2><a href="#">О мероприятии:</a></h2>
+
+       <!-- Вторая секция -->
+     <div id="third-section" class="third-section__natation">
+               <h2><a href="#">О МЕРОПРИЯТИИ:</a></h2>
      </div>
      <div class="third-section">
           <div class="third-section__text">
                <p>В узком семейном кругу, под аккомпанемент гитары, насладится чарующими ароматами и нежнейшими вкусами, домашней еды и напитков!
 В честь 36-летия создателя “Distilleria del Capitano”**</p> <br>
                <p>Вы можете принять участие в дегустационном совете или поучаствовать в соревновании за звание лучшего напитка или блюда в любой представленной категории.</p>
-<p style="margin-top: 440px;">Для участия необходимо отправить организатору фотографию и описание напитка (блюда).</p>
-               <p style="font-size: 20px;">**(рабочее название, не является торговой маркой, в процессе мероприятия возможно придумаем новое)</p>
+<p>Для участия необходимо отправить организатору фотографию и описание напитка (блюда).</p>
+               <p>**(рабочее название, не является торговой маркой, в процессе мероприятия возможно придумаем новое)</p>
           </div>
 
      </div>
@@ -67,7 +70,7 @@
      <footer id="contacts">
           <a href="#"><h2>Место проведения:</h2></a>
           <p>Колпино, ул.Машиностроителей-5 кв.153</p>
-          <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A7b18d5b66554a6c1aa17767821dcab32fd3f25325c11c0b3dc54eac63550b39a&amp;source=constructor" width="1400" height="400" frameborder="0"></iframe>
+          <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A7b18d5b66554a6c1aa17767821dcab32fd3f25325c11c0b3dc54eac63550b39a&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>
           <div class="footer-contacts">
                <p class="mb-1">Для связи:</p>
                <p class="mb-0"><a href="https://vk.com/id529291">ВКонтакте</a></p>
